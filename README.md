@@ -4,15 +4,16 @@ This GitHub Action uploads a directory from your repository to a SharePoint docu
 
 ## Inputs
 
-| Name                | Description                                          | Required  |
-| ------------------- | ---------------------------------------------------- | --------  |
-| `tenant-id`         | Azure AD Tenant ID.                                  | `true`    |
-| `client-id`         | Azure AD Application Client ID.                      | `true`    |
-| `client-secret`     | Azure AD Application Client Secret.                  | `true`    |
-| `site-id`           | The ID of the target SharePoint site.                | `true`    |
-| `drive-id`          | The Drive ID of the document library.                | `true`    |
-| `local-directory`   | The local directory to upload. Defaults to `.`.      | `false`   |
-| `sharepoint-folder` | The base folder in SharePoint to upload to.          | `true`    |
+| Name                | Description                                                                          | Required | Default |
+| ------------------- | ------------------------------------------------------------------------------------ | -------- | ------- |
+| `tenant-id`         | Azure AD Tenant ID.                                                                  | `true`   |         |
+| `client-id`         | Azure AD Application Client ID.                                                      | `true`   |         |
+| `client-secret`     | Azure AD Application Client Secret.                                                  | `true`   |         |
+| `site-id`           | The ID of the target SharePoint site.                                                | `true`   |         |
+| `drive-id`          | The Drive ID of the document library.                                                | `true`   |         |
+| `local-directory`   | The local directory to upload. Defaults to `.`.                                      | `false`  | `.`     |
+| `sharepoint-folder` | The base folder in SharePoint to upload to.                                          | `true`   |         |
+| `sync-deletions`    | Set to `"true"` to delete files from SharePoint that are not in the local directory. | `false`  | `false` |
 
 ## Secrets
 
@@ -49,3 +50,4 @@ jobs:
           drive-id: 'your-sharepoint-drive-id'
           local-directory: './docs' # Optional. Defaults to the root directory
           sharepoint-folder: 'ProjectDocuments/LatestDocs'
+          sync-deletions: 'true'

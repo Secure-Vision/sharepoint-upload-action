@@ -27,6 +27,10 @@ inputs:
   sharepoint-folder:
     description: 'The base folder in SharePoint to upload the directory to.'
     required: true
+  sync-deletions:
+    description: 'Set to "true" to delete files from SharePoint that are not in the local directory.'
+    required: false
+    default: 'false'
 
 # Define how the action runs
 runs:
@@ -40,3 +44,4 @@ runs:
     DRIVE_ID : ${{ inputs.drive-id }}
     LOCAL_DIRECTORY_PATH : ${{ inputs.local-directory }}
     SHAREPOINT_BASE_FOLDER : ${{ inputs.sharepoint-folder }}
+    SYNC_DELETIONS : ${{ inputs.sync-deletions }}
