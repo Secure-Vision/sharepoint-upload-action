@@ -32,3 +32,11 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    CLIENT_ID : ${{ inputs.client-id }}
+    CLIENT_SECRET: ${{ inputs.client-secret }}
+    TENANT_ID : ${{ inputs.tenant-id }}
+    SITE_ID : ${{ inputs.site-id }}
+    DRIVE_ID : ${{ inputs.drive-id }}
+    LOCAL_DIRECTORY_PATH : ${{ inputs.local-directory }}
+    SHAREPOINT_BASE_FOLDER : ${{ inputs.sharepoint-folder }}

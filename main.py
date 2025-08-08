@@ -4,14 +4,14 @@ import os
 import json
 import pathspec
 
-TENANT_ID = os.environ.get("INPUT_TENANT-ID")
-CLIENT_ID = os.environ.get("INPUT_CLIENT-ID")
-CLIENT_SECRET = os.environ.get("INPUT_CLIENT-SECRET")
+TENANT_ID = os.environ.get("TENANT_ID")
+CLIENT_ID = os.environ.get("CLIENT_ID")
+CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
 
-SITE_ID = os.environ.get("INPUT_SITE-ID")
-DRIVE_ID = os.environ.get("INPUT_DRIVE-ID")
-LOCAL_DIRECTORY_PATH = os.environ.get("INPUT_LOCAL-DIRECTORY")
-SHAREPOINT_BASE_FOLDER = os.environ.get("INPUT_SHAREPOINT-FOLDER")
+SITE_ID = os.environ.get("SITE_ID")
+DRIVE_ID = os.environ.get("DRIVE_ID")
+LOCAL_DIRECTORY_PATH = os.environ.get("LOCAL_DIRECTORY_PATH")
+SHAREPOINT_BASE_FOLDER = os.environ.get("SHAREPOINT_BASE_FOLDER")
 
 # --- Script Logic ---
 
