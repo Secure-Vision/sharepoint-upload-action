@@ -1,0 +1,34 @@
+# action.yml
+name: 'GitHub SharePoint Upload'
+description: 'Uploads a git directory to SharePoint, respecting .gitignore and ignoring .git.'
+author: 'techexcellence'
+
+# Define the inputs the user will provide
+inputs:
+  tenant-id:
+    description: 'Azure AD Tenant ID.'
+    required: true
+  client-id:
+    description: 'Azure AD Application Client ID.'
+    required: true
+  client-secret:
+    description: 'Azure AD Application Client Secret.'
+    required: true
+  site-id:
+    description: 'The ID of the target SharePoint site. You can get this through the SharePoint admin portal.'
+    required: true
+  drive-id:
+    description: 'The Drive ID of the document library within the site. You can get this through the Graph API.'
+    required: true
+  local-directory:
+    description: 'The local directory to upload from the runner.'
+    required: true
+    default: '.' # Defaults to the root of the repository
+  sharepoint-folder:
+    description: 'The base folder in SharePoint to upload the directory to.'
+    required: true
+
+# Define how the action runs
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
